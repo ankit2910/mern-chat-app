@@ -1,5 +1,5 @@
 const express = require("express");
-const { chats } = require("./data/data");
+// const { chats } = require("./data/data");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
@@ -9,7 +9,6 @@ const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const path = require("path");
 
 dotenv.config();
-
 connectDB();
 const app = express();
 
@@ -39,6 +38,7 @@ if(process.env.NODE_ENV === "production") {
 // ---------------DEPLOYMENT----------------
 
 
+//Handle Middlewares
 app.use(notFound);
 app.use(errorHandler);
 
